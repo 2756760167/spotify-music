@@ -1,6 +1,7 @@
 "use client"
 
 import AuthModal from "@/components/AuthModal"
+import UploadModal from "@/components/UploadModal"
 import { useEffect, useState } from "react"
 
 interface ModalProviderProps {
@@ -20,6 +21,7 @@ const ModalProvider: React.FC<ModalProviderProps> = ({ children }) => {
     }
     return (
         <>
+            <UploadModal />
             <AuthModal />
         </>
     )
