@@ -26,6 +26,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <meta httpEquiv="Content-Type" content="text/html;charset=utf-8" />
       <body className={`${font.className} h-full`}>
         <ToasterProvider />
         <SupabaseProvider>

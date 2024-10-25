@@ -21,6 +21,7 @@ const SongItem: React.FC<SongItemProps> = ({
                     className="object-cover"
                     src={imagePath || '/images/like.png'}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     alt="Image"
                 />
             </div>
