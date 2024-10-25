@@ -55,18 +55,19 @@ const UploadModal = () => {
             }
             const uniqueID = uniqid()
             // 上传歌曲
-            const {
-                data: songData,
-                error: songError
-            } = await supabaseClient
-                .storage
-                .from('songs')
-                .upload(`song-${values.title}-${uniqueID}`, songFile, {
-                    // 控制缓存策略
-                    cacheControl: '3600',
-                    // 处理文件名冲突
-                    upsert: false
-                });
+            const { data: songData, error: songError } =
+                await supabaseClient.storage
+                    .from("songs")
+                    .upload(
+                        `song-${encodeURIComponent(values.title)}-${uniqueID}`,
+                        songFile,
+                        {
+                            // 控制缓存策略
+                            cacheControl: "3600",
+                            // 处理文件名冲突
+                            upsert: false,
+                        }
+                    );
 
             if (songError) {
                 setIsLoading(false)
