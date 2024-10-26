@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         hostname: "mgbhkxfrctnynqmeljum.supabase.co",
+        protocol: "https", // 确保使用 HTTPS 协议
       },
     ],
   },
